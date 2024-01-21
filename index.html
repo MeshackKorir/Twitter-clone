@@ -10,28 +10,26 @@
     <div class="main">
         <div class="navbar">
             <div class="header"><h3>Twitter Clone</h3></div>
-            <div class="searchButton">
-                <button id="searchButton">Search</button>
-                <div id="userDropdown" class="dropdown-content"></div>
+            <div id="searchButton">
+                <label for="users" style="color: white;">Search:</label>
+                <select style="width: 200px; padding: 10px;" id="users" name="userlist" form="userform">
+                  <option value="isaaco">isaac</option>
+                  <option value="meshack">Meshack</option>
+                  <option value="meshack">Emanuel</option>
+                  <option value="millie">millie</option>
+                </select>
+                <!-- Add the userDropdown element here -->
+                <div id="userDropdown"></div>
             </div>
         </div>
 
         <div class="products">
             <div class="product">
-                <label for="users">Select User:</label>
-                <select id="users"></select>
-              
-                <label for="posts">Select Post:</label>
-                <select id="posts"></select>
-              
-                <div id="comments"></div>
 
             </div>
         </div>
-
-
     </div>
 
-    <script src = "twitter.js"></script>
+    <script src="twitter.js"></script>
 </body>
 </html>
