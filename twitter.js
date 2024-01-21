@@ -32,10 +32,13 @@ function populateUserDropdown(users) {
 }
 
 
-function handleUserSelection() {
+async function handleUserSelection() {
     const userId = document.getElementById('users').value;
     console.log('Selected User ID:', userId);
 
+    
+    const posts = await fetchPosts(userId);
+    displayPosts(posts);
 }
 
 
@@ -49,7 +52,7 @@ document.getElementById('users').addEventListener('click', async function () {
 });
 
 
-document.getElementById('users').addEventListener('click', handleUserSelection);
+document.getElementById('users').addEventListener('change', handleUserSelection);
 
 
 window.onclick = function (event) {
@@ -62,13 +65,40 @@ window.onclick = function (event) {
 
  // Posts fetch function
 
- async function fetchPosts(userId){
-    try{
-        const response = await fetch("https://jsonplaceholder.typicode.com/posts?userId=1");
+ async function fetchPosts(userId) {
+    try {
+        const response = await fetch(`https://jsonplaceholder.typicode.com/posts?userId=${userId}`);
         const posts = await response.json();
         return posts;
     } catch (error) {
-        console.error("Error fetching posts:", error);
-        return[];
+        console.error('Error fetching posts:', error);
+        return [];
     }
+}
+
+  // Function for displaying posts
+ function displayPosts(posts) {
+    const productDiv = document.querySelector(".product");
+    productDiv.innerHTML = '';
+
+    if (posts.length === 0) {
+        productDiv.innerHTML = '<p>No posts yet</p>';
+        return;
+    }
+
+    posts.forEach(post => {
+        const postElement = document.createElement('div');
+        postElement.classList.add('post')
+
+        const titleElement = document.createElement('h4');
+        titleElement.textContent = post.title;
+
+        const bodyElement = document.createElement('p');
+        bodyElement.textContent = post.body;
+
+        postElement.appendChild(titleElement);
+        postElement.appendChild(bodyElement);
+
+        productDiv.appendChild(postElement);
+    })
  }
