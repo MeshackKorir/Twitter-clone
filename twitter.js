@@ -117,3 +117,32 @@ window.onclick = function (event) {
         return [];
     }
  }
+
+ function displayComments(comments) {
+    const commentsDiv = document.createElement('div');
+    commentsDiv.classList.add('comments');
+
+    if (comments.length === 0) {
+        commentsDiv.innerHTML = '<p>No comments yet</p>';
+    } else {
+        comments.forEach(comment => {
+            const commentElement = document.createElement('div');
+            commentElement.classList.add('comment');
+
+            const nameElement = document.createElement('p');
+            nameElement.textContent = `Name: ${comment.name}`;
+
+            const bodyElement = document.createElement('p');
+            bodyElement.textContent = `Comment: ${comment.body}`;
+
+            commentElement.appendChild(nameElement);
+            commentElement.appendChild(bodyElement);
+
+            commentsDiv.appendChild(commentElement);
+        });
+    }
+
+    const productDiv = document.querySelector('.commenting');
+    productDiv.innerHTML = '';
+    productDiv.appendChild(commentsDiv);
+}
