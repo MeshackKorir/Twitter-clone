@@ -58,3 +58,17 @@ window.onclick = function (event) {
         userDropdown.style.display = 'none';
     }
 };
+
+
+ // Posts fetch function
+
+ async function fetchPosts(userId){
+    try{
+        const response = await fetch("https://jsonplaceholder.typicode.com/posts?userId=1");
+        const posts = await response.json();
+        return posts;
+    } catch (error) {
+        console.error("Error fetching posts:", error);
+        return[];
+    }
+ }
