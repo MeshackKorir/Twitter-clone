@@ -16,21 +16,28 @@ body {
   background-color: var(--primary-color);
   width: 100vw;
   height: 100vh;
+  font-family: Arial, sans-serif; /* Added font-family */
 }
 
 .header {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   padding: 10px;
   background-color: var(--bg-primary);
   color: #D79922;
 }
 
+#serch-id{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
 .header h3 {
   font-size: 24px;
   font-weight: bold;
-  margin: 0; /* Remove default margin */
+  margin: 0;
 }
 
 .search-input {
@@ -49,17 +56,19 @@ body {
 .user-profile {
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Align to the left */
+  align-items: flex-start;
   padding: 20px;
 }
 
 .user-profile img {
   border-radius: 50%;
+  width: 120px; 
+  height: 130px;
 }
 
 .content-main {
   display: flex;
-  gap: 10px; /* Adjusted gap between posts and comments */
+  gap: 10px;
   padding: 20px;
 }
 
@@ -80,26 +89,28 @@ body {
   border: 1px solid var(--sec-color);
   padding: 10px;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   gap: 2rem;
 }
 
 .post-img,
 .comment-img {
-  width: 20%;
+  width: 50%;
 }
 
 .post-description,
 .comment-description {
   flex: 1;
   padding-left: 10px;
+  border-bottom: 1px solid var(--sec-color); /* Add border between posts/comments */
+  margin-bottom: 10px;
 }
 
 .post-title,
 .comment-title {
   display: flex;
-  gap: 2rem;
-  /* justify-content: space-between; */
+  gap: 20px;
   align-items: center;
 }
 
@@ -112,26 +123,38 @@ body {
 .content-bottom,
 .commnent-bottom {
   display: flex;
-  gap: 4rem;
-  /* justify-content: space-between; */
+  gap: 20px;
   align-items: center;
+  flex-direction: row;
   margin-top: 10px;
 }
+
 .comment-icon,
 .twitt-icon,
 .like-icon {
   display: flex;
   align-items: center;
 }
+
 .comment-icon img,
 .twitt-icon img,
 .like-icon img {
-  width: 20px;
+  width: 30px;
   margin-right: 5px;
+  height: 10px;
 }
 
 .comment-icon p,
 .twitt-icon p,
 .like-icon p {
   color: gray;
+}
+
+/* Enlarge images */
+.posts img,
+.comments img,
+.post-img img,
+.comment-img img {
+  width: 30px;
+  height: 30px;
 }

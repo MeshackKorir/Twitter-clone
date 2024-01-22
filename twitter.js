@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
             postTitle.className = 'post-title';
 
             const userIcon = document.createElement('img');
-            userIcon.src = "./images/christopher-campbell.jpg";
+            userIcon.src = "https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcRy_FEDbskg4YsMtGFlhyTJ99purnsEi_XnU5ly4VPxYPTrtVdbZHvEPtEdBp_vLE-2aNd779Rz25HxQT4";
             userIcon.width = 20;
             userIcon.alt = "user Icon";
 
@@ -167,7 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
             commentTitle.className = 'comment-title';
 
             const commentUserIcon = document.createElement('img');
-            commentUserIcon.src = "./images/christopher-campbell.jpg";
+            commentUserIcon.src = "https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcRy_FEDbskg4YsMtGFlhyTJ99purnsEi_XnU5ly4VPxYPTrtVdbZHvEPtEdBp_vLE-2aNd779Rz25HxQT4";
             commentUserIcon.width = 20;
             commentUserIcon.alt = "user Icon";
 
